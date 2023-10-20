@@ -1,0 +1,255 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['ID']"
+								},
+								"sink": {
+									"name": "ID",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Order_id']"
+								},
+								"sink": {
+									"name": "Order_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Order_Date']"
+								},
+								"sink": {
+									"name": "Order_Date",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Ship _Date']"
+								},
+								"sink": {
+									"name": "Ship _Date",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Ship_Mode']"
+								},
+								"sink": {
+									"name": "Ship_Mode",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Customer_id']"
+								},
+								"sink": {
+									"name": "Customer_id",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Customer_Name']"
+								},
+								"sink": {
+									"name": "Customer_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Segment']"
+								},
+								"sink": {
+									"name": "Segment",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Country']"
+								},
+								"sink": {
+									"name": "Country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['City']"
+								},
+								"sink": {
+									"name": "City",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['State']"
+								},
+								"sink": {
+									"name": "State",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Postal_Code']"
+								},
+								"sink": {
+									"name": "Postal_Code",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Region']"
+								},
+								"sink": {
+									"name": "Region",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Product_ ID']"
+								},
+								"sink": {
+									"name": "Product_ ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Category']"
+								},
+								"sink": {
+									"name": "Category",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Sub_Category']"
+								},
+								"sink": {
+									"name": "Sub_Category",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Product_Name']"
+								},
+								"sink": {
+									"name": "Product_Name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Sales']"
+								},
+								"sink": {
+									"name": "Sales",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Quantity']"
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Discount']"
+								},
+								"sink": {
+									"name": "Discount",
+									"type": "Decimal"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Profit']"
+								},
+								"sink": {
+									"name": "Profit",
+									"type": "Decimal"
+								}
+							}
+						],
+						"mapComplexValuesToString": false
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "Json1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-10-20T05:11:02Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
