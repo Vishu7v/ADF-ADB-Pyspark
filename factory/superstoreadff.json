@@ -1,0 +1,9 @@
+{
+	"name": "superstoreadff",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ddfbc5d2-8310-4523-a0c4-f4de5809902d",
+		"tenantId": "141cfedd-2714-4e73-a4b0-21009bba5b00"
+	}
+}
