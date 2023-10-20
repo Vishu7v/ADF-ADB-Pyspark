@@ -1,0 +1,86 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "superstore.json",
+				"container": "row"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"ID": {
+					"type": "integer"
+				},
+				"Order_id": {
+					"type": "string"
+				},
+				"Order_Date": {
+					"type": "string"
+				},
+				"Ship _Date": {
+					"type": "string"
+				},
+				"Ship_Mode": {
+					"type": "string"
+				},
+				"Customer_id": {
+					"type": "string"
+				},
+				"Customer_Name": {
+					"type": "string"
+				},
+				"Segment": {
+					"type": "string"
+				},
+				"Country": {
+					"type": "string"
+				},
+				"City": {
+					"type": "string"
+				},
+				"State": {
+					"type": "string"
+				},
+				"Postal_Code": {
+					"type": "integer"
+				},
+				"Region": {
+					"type": "string"
+				},
+				"Product_ ID": {
+					"type": "string"
+				},
+				"Category": {
+					"type": "string"
+				},
+				"Sub_Category": {
+					"type": "string"
+				},
+				"Product_Name": {
+					"type": "string"
+				},
+				"Sales": {
+					"type": "number"
+				},
+				"Quantity": {
+					"type": "integer"
+				},
+				"Discount": {
+					"type": "number"
+				},
+				"Profit": {
+					"type": "number"
+				}
+			}
+		}
+	}
+}
